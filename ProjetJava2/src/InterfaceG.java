@@ -1,4 +1,6 @@
 import org.eclipse.swt.widgets.Display;
+
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Label;
@@ -6,7 +8,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Button;
 
-public class InterfaceG {
+public class InterfaceG  {
 
 	protected Shell shell;
 	private Text text;
@@ -66,6 +68,7 @@ public class InterfaceG {
 		lblMotDePasse.setBounds(65, 175, 88, 15);
 		lblMotDePasse.setText("Mot de passe");
 		
+		
 		text = new Text(shell, SWT.BORDER);
 		text.setBounds(224, 67, 116, 21);
 		
@@ -96,4 +99,5 @@ public class InterfaceG {
 
 
 	}
+
 }
