@@ -1,14 +1,17 @@
-import org.eclipse.swt.widgets.Display;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.widgets.Button;
 
-public class InterfaceG  {
+import java.awt.*; 
+
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.wb.swt.SWTResourceManager;
+
+public class InterfaceG implements ActionListener {
 
 	protected Shell shell;
 	private Text text;
@@ -49,6 +52,7 @@ public class InterfaceG  {
 	 */
 	protected void createContents() {
 		shell = new Shell();
+		shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_SELECTION));
 		shell.setSize(467, 329);
 		shell.setText("SWT Application");
 		
@@ -96,8 +100,17 @@ public class InterfaceG  {
 		Button btnValider = new Button(shell, SWT.NONE);
 		btnValider.setBounds(248, 227, 75, 25);
 		btnValider.setText("Valider");
+	
+		
+	
 
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		
 	}
 
 }
