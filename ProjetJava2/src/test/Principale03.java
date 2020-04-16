@@ -25,7 +25,7 @@ public class Principale03 {
 			System.out.print("Le prix à -50% est " + prixSolde + " €");
 		} else {
 			prixSolde = 0.3 * prixArticle;
-			System.out.print("Le prix à -70% est " + prixSolde + " €");
+			System.out.print("Le prix à -7 0% est " + prixSolde + " €");
 		}
 		clavier.close();
 	}
