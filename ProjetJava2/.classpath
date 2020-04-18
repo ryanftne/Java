@@ -6,16 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Ryan/Desktop/ConnexionJM">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Ryan/Downloads/com.mysql.jdbc_5.1.5.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Ryan/.p2/pool/plugins/org.eclipse.osgi_3.15.100.v20191114-1701.jar" sourcepath="C:/Users/Ryan/.p2/pool/plugins/org.eclipse.osgi_3.15.100.v20191114-1701.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Ryan/.p2/pool/plugins/org.eclipse.core.commands_3.9.600.v20191122-2109.jar" sourcepath="C:/Users/Ryan/.p2/pool/plugins/org.eclipse.core.commands_3.9.600.v20191122-2109.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Ryan/.p2/pool/plugins/org.eclipse.equinox.common_3.10.600.v20191004-1420.jar" sourcepath="C:/Users/Ryan/.p2/pool/plugins/org.eclipse.equinox.common_3.10.600.v20191004-1420.jar"/>

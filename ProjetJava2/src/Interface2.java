@@ -85,12 +85,24 @@ public class Interface2 {
 		
 		
 		Button btnNewButton = new Button(shell, SWT.NONE);
-		btnNewButton.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-			}
-		});
 		btnNewButton.setText("Modifier");
+		
+		btnNewButton.addSelectionListener(new SelectionListener() {
+		      public void widgetSelected(SelectionEvent arg0) {
+		    	  Modifier mdf = new Modifier();
+		  		
+		    	 
+		    	  try {
+		  			Modifier window = new Modifier();
+		  			window.open();
+		  		} catch (Exception e) {
+		  			e.printStackTrace();
+		  		}
+		    	  
+		      }
+		      public void widgetDefaultSelected(SelectionEvent arg0) {
+		      }
+		    });
 		
 		Button btnSupprimer = new Button(shell, SWT.NONE);
 		btnSupprimer.setText("Supprimer");
