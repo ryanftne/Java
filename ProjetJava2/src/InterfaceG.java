@@ -23,7 +23,6 @@ public class InterfaceG implements ActionListener {
 
 	protected Shell shell;
 	private Text text_1;
-	private Text text_2;
 	private Text text_3;
 
 	/**
@@ -66,29 +65,23 @@ public class InterfaceG implements ActionListener {
 		Label lblNom = new Label(shell, SWT.NONE);
 		lblNom.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_SELECTION));
 		lblNom.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		lblNom.setBounds(69, 67, 55, 15);
+		lblNom.setBounds(69, 106, 55, 15);
 		lblNom.setText("Nom");
 		
 		Label lblMotDePasse = new Label(shell, SWT.NONE);
 		lblMotDePasse.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_SELECTION));
 		lblMotDePasse.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		lblMotDePasse.setBounds(64, 141, 88, 15);
+		lblMotDePasse.setBounds(69, 133, 88, 15);
 		lblMotDePasse.setText("Mot de passe");
 		
 		text_1 = new Text(shell, SWT.BORDER);
-		text_1.setBounds(194, 67, 106, 21);
-		
-		text_2 = new Text(shell, SWT.BORDER);
-		text_2.setBounds(194, 102, 106, 21);
+		text_1.setBounds(194, 103, 106, 21);
 		
 		text_3 = new Text(shell, SWT.BORDER);
-		text_3.setBounds(194, 138, 106, 21);
+		text_3.setBounds(194, 130, 106, 21);
 		
 		Label label = new Label(shell, SWT.SEPARATOR | SWT.VERTICAL);
 		label.setBounds(176, 67, 2, 64);
-		
-		Label label_9 = new Label(shell, SWT.SEPARATOR | SWT.VERTICAL);
-		label_9.setBounds(176, 26, 2, 64);
 		
 		Label label_1 = new Label(shell, SWT.SEPARATOR | SWT.VERTICAL);
 		label_1.setBounds(176, 123, 2, 64);
@@ -101,6 +94,7 @@ public class InterfaceG implements ActionListener {
 		      public void widgetSelected(SelectionEvent arg0) {
 		    	  Interface2 test = new Interface2();
 		  		
+		    	 
 		    	  try {
 		  			Interface2 window = new Interface2();
 		  			window.open();
@@ -114,6 +108,13 @@ public class InterfaceG implements ActionListener {
 		    });
 
 		    shell.pack();
+		    
+		    Label lblBienvenue = new Label(shell, SWT.NONE);
+		    lblBienvenue.setFont(SWTResourceManager.getFont("Segoe UI Black", 18, SWT.BOLD));
+		    lblBienvenue.setForeground(SWTResourceManager.getColor(SWT.COLOR_BLACK));
+		    lblBienvenue.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_SELECTION));
+		    lblBienvenue.setBounds(105, 24, 158, 30);
+		    lblBienvenue.setText("BIENVENUE !");
 		    shell.open();
 
 
@@ -126,5 +127,4 @@ public class InterfaceG implements ActionListener {
 		
 		
 	}
-
 }

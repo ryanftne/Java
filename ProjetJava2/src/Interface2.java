@@ -2,11 +2,23 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.eclipse.ui.forms.widgets.TableWrapLayout;
+import org.eclipse.ui.forms.widgets.ColumnLayout;
+import org.eclipse.ui.forms.widgets.ColumnLayoutData;
+import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.ui.forms.widgets.TableWrapData;
 
 public class Interface2 {
 
 	protected Shell shell;
-	private Text txtTest;
+	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
 	
 
 	/**
@@ -44,10 +56,44 @@ public class Interface2 {
 		shell = new Shell();
 		shell.setSize(450, 300);
 		shell.setText("SWT Application");
+		{
+			TableWrapLayout twl_shell = new TableWrapLayout();
+			twl_shell.numColumns = 3;
+			shell.setLayout(twl_shell);
+		}
 		
-		txtTest = new Text(shell, SWT.BORDER);
-		txtTest.setText("Test");
-		txtTest.setBounds(75, 90, 76, 21);
+		Button btnAjouter = new Button(shell, SWT.NONE);
+		btnAjouter.setText("Ajouter");
+		 btnAjouter.setBounds(250, 200, 75, 25);
+
+		 btnAjouter.addSelectionListener(new SelectionListener() {
+		      public void widgetSelected(SelectionEvent arg0) {
+		    	  Ajouter ajt = new Ajouter();
+		  		
+		    	 
+		    	  try {
+		  			Ajouter window = new Ajouter();
+		  			window.open();
+		  		} catch (Exception e) {
+		  			e.printStackTrace();
+		  		}
+		    	  
+		      }
+		      public void widgetDefaultSelected(SelectionEvent arg0) {
+		      }
+		    });
+		
+		
+		Button btnNewButton = new Button(shell, SWT.NONE);
+		btnNewButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
+		});
+		btnNewButton.setText("Modifier");
+		
+		Button btnSupprimer = new Button(shell, SWT.NONE);
+		btnSupprimer.setText("Supprimer");
 
 	}
 }
