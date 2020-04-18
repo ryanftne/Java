@@ -10,7 +10,7 @@ import com.sun.jdi.connect.spi.Connection;
 public class bdd {
 	 private String user="root";
 	 private String password="";
-	 private String url= "jdbc:mysql://localhost/java?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+	 private String url="jdbc:mysql://localhost/projetjava?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	 private java.sql.Connection cnx ;
 	 private java.sql.Statement stm;
 	 

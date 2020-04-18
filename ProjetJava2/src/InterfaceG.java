@@ -1,5 +1,11 @@
 import java.awt.event.ActionEvent;
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.widgets.*;
+import javax.swing.*;
 import java.awt.event.ActionListener;
+
+import javax.swing.JPanel;
 
 import java.awt.*; 
 
@@ -12,9 +18,10 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.wb.swt.SWTResourceManager;
 
 public class InterfaceG implements ActionListener {
+	public InterfaceG() {
+	}
 
 	protected Shell shell;
-	private Text text;
 	private Text text_1;
 	private Text text_2;
 	private Text text_3;
@@ -53,43 +60,32 @@ public class InterfaceG implements ActionListener {
 	protected void createContents() {
 		shell = new Shell();
 		shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_SELECTION));
-		shell.setSize(467, 329);
+		shell.setSize(368, 335);
 		shell.setText("SWT Application");
 		
-		Label lblPseudo = new Label(shell, SWT.NONE);
-		lblPseudo.setBounds(69, 70, 55, 15);
-		lblPseudo.setText("Pseudo");
-		
 		Label lblNom = new Label(shell, SWT.NONE);
-		lblNom.setBounds(69, 105, 55, 15);
+		lblNom.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_SELECTION));
+		lblNom.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+		lblNom.setBounds(69, 67, 55, 15);
 		lblNom.setText("Nom");
 		
-		Label lblPrnom = new Label(shell, SWT.NONE);
-		lblPrnom.setBounds(69, 138, 55, 15);
-		lblPrnom.setText("Pr\u00E9nom");
-		
 		Label lblMotDePasse = new Label(shell, SWT.NONE);
-		lblMotDePasse.setBounds(65, 175, 88, 15);
+		lblMotDePasse.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_SELECTION));
+		lblMotDePasse.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+		lblMotDePasse.setBounds(64, 141, 88, 15);
 		lblMotDePasse.setText("Mot de passe");
 		
-		
-		text = new Text(shell, SWT.BORDER);
-		text.setBounds(224, 67, 116, 21);
-		
 		text_1 = new Text(shell, SWT.BORDER);
-		text_1.setBounds(224, 102, 116, 21);
+		text_1.setBounds(194, 67, 106, 21);
 		
 		text_2 = new Text(shell, SWT.BORDER);
-		text_2.setBounds(224, 135, 116, 21);
+		text_2.setBounds(194, 102, 106, 21);
 		
 		text_3 = new Text(shell, SWT.BORDER);
-		text_3.setBounds(224, 169, 116, 21);
+		text_3.setBounds(194, 138, 106, 21);
 		
 		Label label = new Label(shell, SWT.SEPARATOR | SWT.VERTICAL);
 		label.setBounds(176, 67, 2, 64);
-		
-		Label label_8 = new Label(shell, SWT.SEPARATOR | SWT.VERTICAL);
-		label_8.setBounds(176, 169, 2, 64);
 		
 		Label label_9 = new Label(shell, SWT.SEPARATOR | SWT.VERTICAL);
 		label_9.setBounds(176, 26, 2, 64);
@@ -97,15 +93,33 @@ public class InterfaceG implements ActionListener {
 		Label label_1 = new Label(shell, SWT.SEPARATOR | SWT.VERTICAL);
 		label_1.setBounds(176, 123, 2, 64);
 		
-		Button btnValider = new Button(shell, SWT.NONE);
-		btnValider.setBounds(248, 227, 75, 25);
-		btnValider.setText("Valider");
-	
-		
-	
+		  Button button = new Button(shell, SWT.NONE);
+		    button.setText("Valider");
+		    button.setBounds(250, 200, 75, 25);
+
+		    button.addSelectionListener(new SelectionListener() {
+		      public void widgetSelected(SelectionEvent arg0) {
+		    	  Interface2 test = new Interface2();
+		  		
+		    	  try {
+		  			Interface2 window = new Interface2();
+		  			window.open();
+		  		} catch (Exception e) {
+		  			e.printStackTrace();
+		  		}
+		    	  
+		      }
+		      public void widgetDefaultSelected(SelectionEvent arg0) {
+		      }
+		    });
+
+		    shell.pack();
+		    shell.open();
 
 
 	}
+	
+		
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
