@@ -1,7 +1,33 @@
 import org.eclipse.swt.widgets.Display;
+import java.awt.event.ActionEvent;
+import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.widgets.*;
+import javax.swing.*;
+import java.awt.event.ActionListener;
+
+import javax.swing.JPanel;
+
+import java.awt.*; 
+
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.wb.swt.SWTResourceManager;
+
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Label;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.wb.swt.SWTResourceManager;
@@ -97,6 +123,13 @@ public class Ajouter {
 		Button btnAjouter = new Button(shell, SWT.NONE);
 		btnAjouter.setBounds(349, 226, 75, 25);
 		btnAjouter.setText("Ajouter");
+		btnAjouter.addSelectionListener(new SelectionListener() {
+            public void widgetSelected(SelectionEvent arg0) {
+                AddUser();
+            }
+            public void widgetDefaultSelected(SelectionEvent arg0) {
+            }
+          });
 		
 		
 		Label lblAjouterUntudiant = new Label(shell, SWT.NONE);
@@ -104,6 +137,42 @@ public class Ajouter {
 		lblAjouterUntudiant.setBounds(151, 10, 202, 33);
 		lblAjouterUntudiant.setText("Ajouter un \u00E9tudiant");
 
+	}
+
+void AddUser() {
+		
+		
+	    String jdbcURL = "jdbc:mysql://localhost:3308/projetjava?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+	    String dbUsername = "root";
+	    String dbPassword ="";
+	    
+	    
+	    
+	    try {
+	    	Connection connection = DriverManager.getConnection(jdbcURL, dbUsername, dbPassword);
+	    	
+	    	String sql = "INSERT INTO etudiant (nom, prenom, age, classe, cantine, informations)"
+	    			+" VALUES (?, ?, ?, ?, ?, ?)";
+	    	
+	    	PreparedStatement statement = connection.prepareStatement(sql);
+	    	statement.setString(1, text.getText());
+	    	statement.setString(2, text_1.getText());
+	    	statement.setString(3, text_2.getText());
+	    	statement.setString(4, text_3.getText());
+	    	statement.setString(5, text_4.getText());
+	    	statement.setString(6, text_5.getText());
+	    	
+	    	int rows = statement.executeUpdate();
+	    	
+	    	if (rows > 0) {
+	    		System.out.println("A new user has been inserted");
+	    	}
+	    		
+	    		connection.close();
+	    	
+	    }catch (SQLException ex) {
+	    	ex.printStackTrace();
+	    }
 	}
 
 }
