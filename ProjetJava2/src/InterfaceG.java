@@ -17,11 +17,11 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.wb.swt.SWTResourceManager;
 
-public class InterfaceG implements ActionListener {
+public class InterfaceG implements ActionListener { 
 	public InterfaceG() {
 	}
 
-	protected Shell shell;
+	protected Shell shell; // Déclaration des variables
 	private Text text_1;
 	private Text text_3;
 
@@ -31,7 +31,7 @@ public class InterfaceG implements ActionListener {
 	 */
 	public static void main(String[] args) {
 		try {
-			InterfaceG window = new InterfaceG();
+			InterfaceG window = new InterfaceG(); // 
 			window.open();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -96,7 +96,7 @@ public class InterfaceG implements ActionListener {
 		  		
 		    	 
 		    	  try {
-		  			Interface2 window = new Interface2();
+		  			Interface2 window = new Interface2(); // Constructeur par défaut
 		  			window.open();
 		  		} catch (Exception e) {
 		  			e.printStackTrace();

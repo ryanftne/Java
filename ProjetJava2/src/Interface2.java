@@ -14,6 +14,7 @@ import org.eclipse.ui.forms.widgets.ColumnLayoutData;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.TableWrapData;
+import org.eclipse.wb.swt.SWTResourceManager;
 
 public class Interface2 {
 
@@ -54,6 +55,7 @@ public class Interface2 {
 	 */
 	protected void createContents() {
 		shell = new Shell();
+		shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_NORMAL_SHADOW));
 		shell.setSize(450, 300);
 		shell.setText("SWT Application");
 		{
